@@ -1,0 +1,23 @@
+name: 'SonarQube Runner'
+description: 'Scan your code with SonarQube Scanner to detect bugs, vulnerabilities and code smells in more than 25 programming languages.'
+author: 'Jonathan Bußhoff'
+branding:
+  icon: 'check'
+  color: 'orange'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  host:
+    description: 'Private SonarQube URL'
+    required: true
+  projectBaseDir:
+    description: 'Set the sonar.projectBaseDir analysis property'
+    required: false
+    default: '.'
+  login:
+    description: 'Login or authentication token for the SonarQube user'
+    required: true
+  projectKey:
+    description: 'Project key of your repository'
+    required: true
